@@ -65,6 +65,17 @@ describe('Esperas...', () => {
     it.only('Click Retry', () => {
         cy.get('#buttonCount')
             .click()
-            .should('have.value', '1')
+            .click()
+            .should('have.value', '111')
+    })
+
+    it.only('Should vs Then', () => {
+        cy.get('#buttonListDOM').then($el => {
+            //console.log($el)
+            expect($el).to.have.length(1)
+            //should ele fica sendo executado ao longa da espera
+            //then faz acertiva apenas uma vez nao funciona
+            //cy.get('#buttonList')
+        })
     })
 })
