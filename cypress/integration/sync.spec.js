@@ -30,8 +30,8 @@ describe('Esperas...', () => {
             .type('Funciona')
     })
 
-    it.only('Uso do fins', () => {
-        cy.get('#buttonList').click()
+    it.only('Uso do find', () => {
+        cy.get('#buttonListDOM').click()
         cy.get('#lista li')
             .find('span')
             .should('contain', 'Item 1')
@@ -39,8 +39,26 @@ describe('Esperas...', () => {
         //cy.get('#lista li')
           //  .find('span')
            // .should('contain', 'Item 2')
-
         cy.get('#lista li span')
            .should('contain', 'Item 2')
+    })
+
+    it.only('Uso do timeout', () => {
+        //"Utilizar defaultCommandTimeout: 100" em ultimio caso pois no cypress pois ele pega a execução inteira
+        //cy.get('#buttonDelay')
+          //  .click()
+        //cy.get('#novoCampo', {timeout: 3000})
+          //  .should('exist')
+
+        //cy.get('#buttonListDOM').click()
+        //cy.wait(5000) utilizar em casos extremo pois ele nao olha a aplixação 
+        //cy.get('#lista li span', {timeout: 30000})
+         //.should('contain', 'Item 2')    
+
+        cy.get('#buttonListDOM').click()
+        cy.get('#lista li span')
+            .should('have.length', 1)
+        cy.get('#lista li span')
+            .should('have.length', 2)
     })
 })
