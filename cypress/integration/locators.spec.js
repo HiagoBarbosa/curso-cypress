@@ -22,4 +22,10 @@ describe('Work with basic elements', () => {
         cy.xpath("//table[@id='tabelaUsuarios']//td[contains(.,'Francisco')]/..//input[@type='text']")
         cy.xpath("//td[contains(.,'Usuario A')]/following-sibling::td[contains(.,'Mestrado')]/..//input[@type='text']")
     })
+
+    it('using spath', () =>{
+        cy.xpath('//input')
+        ///cy.xpath('//tabela[@id='tabelaUsuarios']//td[contains(.,'Francisco')]')
+    } )
 })
+
